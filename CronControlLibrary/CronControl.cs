@@ -18,7 +18,7 @@ namespace CronControlLibrary
             ddlYearlyMonths2.SelectedIndex = 0;
             ddlYearlyOrdinal.SelectedIndex = 0;
             ddlYearlyWeekdays.SelectedIndex = 0;
-            comboBox1.SelectedIndex = 0;
+            selectBox.SelectedIndex = 0;
             tcMain.Appearance = TabAppearance.FlatButtons;
             tcMain.ItemSize = new Size(0, 1);
             tcMain.SizeMode = TabSizeMode.Fixed;
@@ -341,18 +341,18 @@ namespace CronControlLibrary
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 6)
+            if (selectBox.SelectedIndex == 6)
             {
                 tcMain.Enabled = false;
                 return;
             }
             tcMain.Enabled = true;
-            tcMain.SelectedIndex = comboBox1.SelectedIndex;
+            tcMain.SelectedIndex = selectBox.SelectedIndex;
         }
 
         private void TcMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = tcMain.SelectedIndex;
+            selectBox.SelectedIndex = tcMain.SelectedIndex;
         }
     }
 }
