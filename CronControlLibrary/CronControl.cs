@@ -341,6 +341,12 @@ namespace CronControlLibrary
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedIndex == 6)
+            {
+                tcMain.Enabled = false;
+                return;
+            }
+            tcMain.Enabled = true;
             tcMain.SelectedIndex = comboBox1.SelectedIndex;
         }
     }
