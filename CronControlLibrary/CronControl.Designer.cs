@@ -157,6 +157,7 @@ namespace CronControlLibrary
             this.tcMain.SelectedIndex = 0;
             this.tcMain.Size = new System.Drawing.Size(399, 136);
             this.tcMain.TabIndex = 0;
+            this.tcMain.SelectedIndexChanged += new System.EventHandler(this.TcMain_SelectedIndexChanged);
             // 
             // tabMinutes
             // 
@@ -164,7 +165,7 @@ namespace CronControlLibrary
             this.tabMinutes.Location = new System.Drawing.Point(4, 22);
             this.tabMinutes.Name = "tabMinutes";
             this.tabMinutes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMinutes.Size = new System.Drawing.Size(437, 110);
+            this.tabMinutes.Size = new System.Drawing.Size(391, 110);
             this.tabMinutes.TabIndex = 0;
             this.tabMinutes.Text = global::CronControlLibrary.Properties.ControlResource.minutesTabTitle;
             this.tabMinutes.UseVisualStyleBackColor = true;
@@ -177,7 +178,7 @@ namespace CronControlLibrary
             this.flpMinutes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpMinutes.Location = new System.Drawing.Point(3, 3);
             this.flpMinutes.Name = "flpMinutes";
-            this.flpMinutes.Size = new System.Drawing.Size(431, 104);
+            this.flpMinutes.Size = new System.Drawing.Size(385, 104);
             this.flpMinutes.TabIndex = 0;
             // 
             // lblMinutesEvery
@@ -229,7 +230,7 @@ namespace CronControlLibrary
             this.tabHourly.Location = new System.Drawing.Point(4, 22);
             this.tabHourly.Name = "tabHourly";
             this.tabHourly.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHourly.Size = new System.Drawing.Size(437, 110);
+            this.tabHourly.Size = new System.Drawing.Size(391, 110);
             this.tabHourly.TabIndex = 1;
             this.tabHourly.Text = global::CronControlLibrary.Properties.ControlResource.hourlyTabTitle;
             this.tabHourly.UseVisualStyleBackColor = true;
@@ -246,7 +247,7 @@ namespace CronControlLibrary
             this.tlpHourly.RowCount = 2;
             this.tlpHourly.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpHourly.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpHourly.Size = new System.Drawing.Size(431, 104);
+            this.tlpHourly.Size = new System.Drawing.Size(385, 104);
             this.tlpHourly.TabIndex = 0;
             // 
             // flpHourlyBotton
@@ -256,7 +257,7 @@ namespace CronControlLibrary
             this.flpHourlyBotton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpHourlyBotton.Location = new System.Drawing.Point(3, 55);
             this.flpHourlyBotton.Name = "flpHourlyBotton";
-            this.flpHourlyBotton.Size = new System.Drawing.Size(425, 46);
+            this.flpHourlyBotton.Size = new System.Drawing.Size(379, 46);
             this.flpHourlyBotton.TabIndex = 1;
             // 
             // lblHourlyStartAt
@@ -289,7 +290,7 @@ namespace CronControlLibrary
             this.flpHourlyTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpHourlyTop.Location = new System.Drawing.Point(3, 3);
             this.flpHourlyTop.Name = "flpHourlyTop";
-            this.flpHourlyTop.Size = new System.Drawing.Size(425, 46);
+            this.flpHourlyTop.Size = new System.Drawing.Size(379, 46);
             this.flpHourlyTop.TabIndex = 0;
             // 
             // lblHourlyEvery
@@ -341,7 +342,7 @@ namespace CronControlLibrary
             this.tabDaily.Location = new System.Drawing.Point(4, 22);
             this.tabDaily.Name = "tabDaily";
             this.tabDaily.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDaily.Size = new System.Drawing.Size(437, 110);
+            this.tabDaily.Size = new System.Drawing.Size(391, 110);
             this.tabDaily.TabIndex = 2;
             this.tabDaily.Text = global::CronControlLibrary.Properties.ControlResource.dailyTabTitle;
             this.tabDaily.UseVisualStyleBackColor = true;
@@ -360,7 +361,7 @@ namespace CronControlLibrary
             this.tlpDaily.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpDaily.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpDaily.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpDaily.Size = new System.Drawing.Size(431, 104);
+            this.tlpDaily.Size = new System.Drawing.Size(385, 104);
             this.tlpDaily.TabIndex = 1;
             // 
             // flpDailyMiddle
@@ -370,7 +371,7 @@ namespace CronControlLibrary
             this.flpDailyMiddle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpDailyMiddle.Location = new System.Drawing.Point(3, 37);
             this.flpDailyMiddle.Name = "flpDailyMiddle";
-            this.flpDailyMiddle.Size = new System.Drawing.Size(425, 28);
+            this.flpDailyMiddle.Size = new System.Drawing.Size(379, 28);
             this.flpDailyMiddle.TabIndex = 1;
             // 
             // rbtDailyWeekDays
@@ -404,7 +405,7 @@ namespace CronControlLibrary
             this.flpDailyTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpDailyTop.Location = new System.Drawing.Point(3, 3);
             this.flpDailyTop.Name = "flpDailyTop";
-            this.flpDailyTop.Size = new System.Drawing.Size(425, 28);
+            this.flpDailyTop.Size = new System.Drawing.Size(379, 28);
             this.flpDailyTop.TabIndex = 0;
             // 
             // rbtDailyEvery
@@ -470,7 +471,7 @@ namespace CronControlLibrary
             this.flpDailyBotton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpDailyBotton.Location = new System.Drawing.Point(3, 71);
             this.flpDailyBotton.Name = "flpDailyBotton";
-            this.flpDailyBotton.Size = new System.Drawing.Size(425, 30);
+            this.flpDailyBotton.Size = new System.Drawing.Size(379, 30);
             this.flpDailyBotton.TabIndex = 2;
             // 
             // lblDailyStartAt
@@ -919,7 +920,7 @@ namespace CronControlLibrary
             this.tabYearly.Location = new System.Drawing.Point(4, 22);
             this.tabYearly.Name = "tabYearly";
             this.tabYearly.Padding = new System.Windows.Forms.Padding(3);
-            this.tabYearly.Size = new System.Drawing.Size(437, 110);
+            this.tabYearly.Size = new System.Drawing.Size(391, 110);
             this.tabYearly.TabIndex = 5;
             this.tabYearly.Text = global::CronControlLibrary.Properties.ControlResource.yearlyTabTitle;
             this.tabYearly.UseVisualStyleBackColor = true;
@@ -938,7 +939,7 @@ namespace CronControlLibrary
             this.tlpYearly.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpYearly.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpYearly.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tlpYearly.Size = new System.Drawing.Size(431, 104);
+            this.tlpYearly.Size = new System.Drawing.Size(385, 104);
             this.tlpYearly.TabIndex = 3;
             // 
             // flpYearlyMiddle
@@ -952,7 +953,7 @@ namespace CronControlLibrary
             this.flpYearlyMiddle.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpYearlyMiddle.Location = new System.Drawing.Point(3, 37);
             this.flpYearlyMiddle.Name = "flpYearlyMiddle";
-            this.flpYearlyMiddle.Size = new System.Drawing.Size(425, 28);
+            this.flpYearlyMiddle.Size = new System.Drawing.Size(379, 28);
             this.flpYearlyMiddle.TabIndex = 1;
             // 
             // rbtYearlyOrdinal
@@ -1050,7 +1051,7 @@ namespace CronControlLibrary
             this.flpYearlyTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpYearlyTop.Location = new System.Drawing.Point(3, 3);
             this.flpYearlyTop.Name = "flpYearlyTop";
-            this.flpYearlyTop.Size = new System.Drawing.Size(425, 28);
+            this.flpYearlyTop.Size = new System.Drawing.Size(379, 28);
             this.flpYearlyTop.TabIndex = 0;
             // 
             // rbtYearlyEvery
@@ -1128,7 +1129,7 @@ namespace CronControlLibrary
             this.flpYearlyBotton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpYearlyBotton.Location = new System.Drawing.Point(3, 71);
             this.flpYearlyBotton.Name = "flpYearlyBotton";
-            this.flpYearlyBotton.Size = new System.Drawing.Size(425, 30);
+            this.flpYearlyBotton.Size = new System.Drawing.Size(379, 30);
             this.flpYearlyBotton.TabIndex = 2;
             // 
             // lblYearlyStartAt

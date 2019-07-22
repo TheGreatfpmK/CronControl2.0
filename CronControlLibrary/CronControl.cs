@@ -349,5 +349,10 @@ namespace CronControlLibrary
             tcMain.Enabled = true;
             tcMain.SelectedIndex = comboBox1.SelectedIndex;
         }
+
+        private void TcMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = tcMain.SelectedIndex;
+        }
     }
 }
