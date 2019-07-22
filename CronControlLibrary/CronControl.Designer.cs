@@ -108,6 +108,7 @@ namespace CronControlLibrary
             this.flpYearlyBotton = new System.Windows.Forms.FlowLayoutPanel();
             this.lblYearlyStartAt = new System.Windows.Forms.Label();
             this.dtpYearlyTime = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tcMain.SuspendLayout();
             this.tabMinutes.SuspendLayout();
             this.flpMinutes.SuspendLayout();
@@ -151,11 +152,10 @@ namespace CronControlLibrary
             this.tcMain.Controls.Add(this.tabWeekly);
             this.tcMain.Controls.Add(this.tabMonthly);
             this.tcMain.Controls.Add(this.tabYearly);
-            this.tcMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tcMain.Location = new System.Drawing.Point(0, 0);
+            this.tcMain.Location = new System.Drawing.Point(0, 31);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(520, 140);
+            this.tcMain.Size = new System.Drawing.Size(520, 109);
             this.tcMain.TabIndex = 0;
             // 
             // tabMinutes
@@ -164,7 +164,7 @@ namespace CronControlLibrary
             this.tabMinutes.Location = new System.Drawing.Point(4, 22);
             this.tabMinutes.Name = "tabMinutes";
             this.tabMinutes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMinutes.Size = new System.Drawing.Size(512, 114);
+            this.tabMinutes.Size = new System.Drawing.Size(512, 83);
             this.tabMinutes.TabIndex = 0;
             this.tabMinutes.Text = global::CronControlLibrary.Properties.ControlResource.minutesTabTitle;
             this.tabMinutes.UseVisualStyleBackColor = true;
@@ -177,7 +177,7 @@ namespace CronControlLibrary
             this.flpMinutes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpMinutes.Location = new System.Drawing.Point(3, 3);
             this.flpMinutes.Name = "flpMinutes";
-            this.flpMinutes.Size = new System.Drawing.Size(506, 108);
+            this.flpMinutes.Size = new System.Drawing.Size(506, 77);
             this.flpMinutes.TabIndex = 0;
             // 
             // lblMinutesEvery
@@ -188,9 +188,9 @@ namespace CronControlLibrary
             this.lblMinutesEvery.Name = "lblMinutesEvery";
             this.lblMinutesEvery.Size = new System.Drawing.Size(34, 13);
             this.lblMinutesEvery.TabIndex = 0;
-            this.lblMinutesEvery.Text = global::CronControlLibrary.Properties.ControlResource.minutesEveryText;
+            this.lblMinutesEvery.Text = "Every";
             // 
-            // nupMinutes
+            // nudMinutes
             // 
             this.nudMinutes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.nudMinutes.Location = new System.Drawing.Point(43, 3);
@@ -221,7 +221,7 @@ namespace CronControlLibrary
             this.lblMinutes.Name = "lblMinutes";
             this.lblMinutes.Size = new System.Drawing.Size(49, 13);
             this.lblMinutes.TabIndex = 2;
-            this.lblMinutes.Text = global::CronControlLibrary.Properties.ControlResource.minutesText;
+            this.lblMinutes.Text = "minute(s)";
             // 
             // tabHourly
             // 
@@ -267,7 +267,7 @@ namespace CronControlLibrary
             this.lblHourlyStartAt.Name = "lblHourlyStartAt";
             this.lblHourlyStartAt.Size = new System.Drawing.Size(41, 13);
             this.lblHourlyStartAt.TabIndex = 1;
-            this.lblHourlyStartAt.Text = global::CronControlLibrary.Properties.ControlResource.hourlyStartAt;
+            this.lblHourlyStartAt.Text = "Start at";
             // 
             // dtpHourlyTime
             // 
@@ -300,30 +300,30 @@ namespace CronControlLibrary
             this.lblHourlyEvery.Name = "lblHourlyEvery";
             this.lblHourlyEvery.Size = new System.Drawing.Size(34, 13);
             this.lblHourlyEvery.TabIndex = 1;
-            this.lblHourlyEvery.Text = global::CronControlLibrary.Properties.ControlResource.hourlyEveryText;
+            this.lblHourlyEvery.Text = "Every";
             // 
-            // nupHourlyHours
+            // nudHourlyHours
             // 
             this.nudHourlyHours.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.nudHourlyHours.Location = new System.Drawing.Point(43, 3);
+            this.nudHourlyHours.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.nudHourlyHours.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudHourlyHours.Name = "nudHourlyHours";
             this.nudHourlyHours.Size = new System.Drawing.Size(50, 20);
             this.nudHourlyHours.TabIndex = 2;
             this.nudHourlyHours.Value = new decimal(new int[] {
-                1,
-                0,
-                0,
-                0});
-            this.nudHourlyHours.Maximum = new decimal(new int[] {
-                23,
-                0,
-                0,
-                0});
-            this.nudHourlyHours.Minimum = new decimal(new int[] {
-                1,
-                0,
-                0,
-                0});
+            1,
+            0,
+            0,
+            0});
             // 
             // lblHourlyHours
             // 
@@ -333,7 +333,7 @@ namespace CronControlLibrary
             this.lblHourlyHours.Name = "lblHourlyHours";
             this.lblHourlyHours.Size = new System.Drawing.Size(39, 13);
             this.lblHourlyHours.TabIndex = 3;
-            this.lblHourlyHours.Text = global::CronControlLibrary.Properties.ControlResource.hourlyHoursText;
+            this.lblHourlyHours.Text = "hour(s)";
             // 
             // tabDaily
             // 
@@ -393,7 +393,7 @@ namespace CronControlLibrary
             this.lblDailyWeekDays.Name = "lblDailyWeekDays";
             this.lblDailyWeekDays.Size = new System.Drawing.Size(88, 13);
             this.lblDailyWeekDays.TabIndex = 5;
-            this.lblDailyWeekDays.Text = global::CronControlLibrary.Properties.ControlResource.dailyWeekDaysText;
+            this.lblDailyWeekDays.Text = "Every Week Day";
             // 
             // flpDailyTop
             // 
@@ -428,30 +428,30 @@ namespace CronControlLibrary
             this.lblDailyEvery.Name = "lblDailyEvery";
             this.lblDailyEvery.Size = new System.Drawing.Size(34, 13);
             this.lblDailyEvery.TabIndex = 1;
-            this.lblDailyEvery.Text = global::CronControlLibrary.Properties.ControlResource.dailyEveryText;
+            this.lblDailyEvery.Text = "Every";
             // 
-            // nupDailyDays
+            // nudDailyDays
             // 
             this.nudDailyDays.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.nudDailyDays.Location = new System.Drawing.Point(63, 3);
+            this.nudDailyDays.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.nudDailyDays.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.nudDailyDays.Name = "nudDailyDays";
             this.nudDailyDays.Size = new System.Drawing.Size(50, 20);
             this.nudDailyDays.TabIndex = 2;
             this.nudDailyDays.Value = new decimal(new int[] {
-                1,
-                0,
-                0,
-                0});
-            this.nudDailyDays.Maximum = new decimal(new int[] {
-                360,
-                0,
-                0,
-                0});
-            this.nudDailyDays.Minimum = new decimal(new int[] {
-                1,
-                0,
-                0,
-                0});
+            1,
+            0,
+            0,
+            0});
             // 
             // lblDailyDays
             // 
@@ -461,7 +461,7 @@ namespace CronControlLibrary
             this.lblDailyDays.Name = "lblDailyDays";
             this.lblDailyDays.Size = new System.Drawing.Size(35, 13);
             this.lblDailyDays.TabIndex = 3;
-            this.lblDailyDays.Text = global::CronControlLibrary.Properties.ControlResource.dailyDaysText;
+            this.lblDailyDays.Text = "day(s)";
             // 
             // flpDailyBotton
             // 
@@ -481,7 +481,7 @@ namespace CronControlLibrary
             this.lblDailyStartAt.Name = "lblDailyStartAt";
             this.lblDailyStartAt.Size = new System.Drawing.Size(41, 13);
             this.lblDailyStartAt.TabIndex = 4;
-            this.lblDailyStartAt.Text = global::CronControlLibrary.Properties.ControlResource.dailyStartAt;
+            this.lblDailyStartAt.Text = "Start at";
             // 
             // dtpDailyTime
             // 
@@ -539,7 +539,7 @@ namespace CronControlLibrary
             this.lblWeeklyStartAt.Name = "lblWeeklyStartAt";
             this.lblWeeklyStartAt.Size = new System.Drawing.Size(41, 13);
             this.lblWeeklyStartAt.TabIndex = 4;
-            this.lblWeeklyStartAt.Text = global::CronControlLibrary.Properties.ControlResource.weeklyStartAt;
+            this.lblWeeklyStartAt.Text = "Start at";
             // 
             // dtpWeeklyTime
             // 
@@ -701,7 +701,7 @@ namespace CronControlLibrary
             this.lblMonthlyThe.Name = "lblMonthlyThe";
             this.lblMonthlyThe.Size = new System.Drawing.Size(26, 13);
             this.lblMonthlyThe.TabIndex = 5;
-            this.lblMonthlyThe.Text = global::CronControlLibrary.Properties.ControlResource.monthlyThe;
+            this.lblMonthlyThe.Text = "The";
             // 
             // ddlMonthlyOrdinal
             // 
@@ -722,16 +722,14 @@ namespace CronControlLibrary
             // 
             this.ddlMonthlyWeekdays.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlMonthlyWeekdays.FormattingEnabled = true;
-            this.ddlMonthlyWeekdays.Items.AddRange(new object[]
-            {
-                global::CronControlLibrary.Properties.ControlResource.Sunday,
-                global::CronControlLibrary.Properties.ControlResource.Monday,
-                global::CronControlLibrary.Properties.ControlResource.Tuesday,
-                global::CronControlLibrary.Properties.ControlResource.Wednesday,
-                global::CronControlLibrary.Properties.ControlResource.Thursday,
-                global::CronControlLibrary.Properties.ControlResource.Friday,
-                global::CronControlLibrary.Properties.ControlResource.Saturday
-            });
+            this.ddlMonthlyWeekdays.Items.AddRange(new object[] {
+            global::CronControlLibrary.Properties.ControlResource.Sunday,
+            global::CronControlLibrary.Properties.ControlResource.Monday,
+            global::CronControlLibrary.Properties.ControlResource.Tuesday,
+            global::CronControlLibrary.Properties.ControlResource.Wednesday,
+            global::CronControlLibrary.Properties.ControlResource.Thursday,
+            global::CronControlLibrary.Properties.ControlResource.Friday,
+            global::CronControlLibrary.Properties.ControlResource.Saturday});
             this.ddlMonthlyWeekdays.Location = new System.Drawing.Point(136, 3);
             this.ddlMonthlyWeekdays.Name = "ddlMonthlyWeekdays";
             this.ddlMonthlyWeekdays.Size = new System.Drawing.Size(75, 21);
@@ -745,17 +743,17 @@ namespace CronControlLibrary
             this.lblMonthlyEvery2.Name = "lblMonthlyEvery2";
             this.lblMonthlyEvery2.Size = new System.Drawing.Size(45, 13);
             this.lblMonthlyEvery2.TabIndex = 10;
-            this.lblMonthlyEvery2.Text = global::CronControlLibrary.Properties.ControlResource.monthlyEvery;
+            this.lblMonthlyEvery2.Text = "of every";
             // 
             // nudMonthlyMonths2
             // 
             this.nudMonthlyMonths2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.nudMonthlyMonths2.Location = new System.Drawing.Point(268, 3);
             this.nudMonthlyMonths2.Maximum = new decimal(new int[] {
-                12,
-                0,
-                0,
-                0});
+            12,
+            0,
+            0,
+            0});
             this.nudMonthlyMonths2.Minimum = new decimal(new int[] {
             1,
             0,
@@ -778,7 +776,7 @@ namespace CronControlLibrary
             this.lblMonthlyMonth2.Name = "lblMonthlyMonth2";
             this.lblMonthlyMonth2.Size = new System.Drawing.Size(47, 13);
             this.lblMonthlyMonth2.TabIndex = 7;
-            this.lblMonthlyMonth2.Text = global::CronControlLibrary.Properties.ControlResource.monthlyMonths;
+            this.lblMonthlyMonth2.Text = "month(s)";
             // 
             // flpMonthlyTop
             // 
@@ -815,9 +813,9 @@ namespace CronControlLibrary
             this.lblMonthlyDay.Name = "lblMonthlyDay";
             this.lblMonthlyDay.Size = new System.Drawing.Size(26, 13);
             this.lblMonthlyDay.TabIndex = 1;
-            this.lblMonthlyDay.Text = global::CronControlLibrary.Properties.ControlResource.monthlyDay;
+            this.lblMonthlyDay.Text = "Day";
             // 
-            // nudMonthlyDay
+            // nudMonthlyDays
             // 
             this.nudMonthlyDays.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.nudMonthlyDays.Location = new System.Drawing.Point(55, 3);
@@ -848,7 +846,7 @@ namespace CronControlLibrary
             this.lblMonthlyEvery.Name = "lblMonthlyEvery";
             this.lblMonthlyEvery.Size = new System.Drawing.Size(45, 13);
             this.lblMonthlyEvery.TabIndex = 3;
-            this.lblMonthlyEvery.Text = global::CronControlLibrary.Properties.ControlResource.monthlyEvery;
+            this.lblMonthlyEvery.Text = "of every";
             // 
             // nudMonthlyMonths
             // 
@@ -881,7 +879,7 @@ namespace CronControlLibrary
             this.lblMonthlyMonth.Name = "lblMonthlyMonth";
             this.lblMonthlyMonth.Size = new System.Drawing.Size(47, 13);
             this.lblMonthlyMonth.TabIndex = 5;
-            this.lblMonthlyMonth.Text = global::CronControlLibrary.Properties.ControlResource.monthlyMonths;
+            this.lblMonthlyMonth.Text = "month(s)";
             // 
             // flpMonthlyBotton
             // 
@@ -901,7 +899,7 @@ namespace CronControlLibrary
             this.lblMonthlyStartAt.Name = "lblMonthlyStartAt";
             this.lblMonthlyStartAt.Size = new System.Drawing.Size(41, 13);
             this.lblMonthlyStartAt.TabIndex = 4;
-            this.lblMonthlyStartAt.Text = global::CronControlLibrary.Properties.ControlResource.monthlyStartAt;
+            this.lblMonthlyStartAt.Text = "Start at";
             // 
             // dtpMonthlyTime
             // 
@@ -977,7 +975,7 @@ namespace CronControlLibrary
             this.lblYearlyThe.Name = "lblYearlyThe";
             this.lblYearlyThe.Size = new System.Drawing.Size(26, 13);
             this.lblYearlyThe.TabIndex = 5;
-            this.lblYearlyThe.Text = global::CronControlLibrary.Properties.ControlResource.yearlyThe;
+            this.lblYearlyThe.Text = "The";
             // 
             // ddlYearlyOrdinal
             // 
@@ -998,16 +996,14 @@ namespace CronControlLibrary
             // 
             this.ddlYearlyWeekdays.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ddlYearlyWeekdays.FormattingEnabled = true;
-            this.ddlYearlyWeekdays.Items.AddRange(new object[]
-            {
-                global::CronControlLibrary.Properties.ControlResource.Sunday,
-                global::CronControlLibrary.Properties.ControlResource.Monday,
-                global::CronControlLibrary.Properties.ControlResource.Tuesday,
-                global::CronControlLibrary.Properties.ControlResource.Wednesday,
-                global::CronControlLibrary.Properties.ControlResource.Thursday,
-                global::CronControlLibrary.Properties.ControlResource.Friday,
-                global::CronControlLibrary.Properties.ControlResource.Saturday
-            });
+            this.ddlYearlyWeekdays.Items.AddRange(new object[] {
+            global::CronControlLibrary.Properties.ControlResource.Sunday,
+            global::CronControlLibrary.Properties.ControlResource.Monday,
+            global::CronControlLibrary.Properties.ControlResource.Tuesday,
+            global::CronControlLibrary.Properties.ControlResource.Wednesday,
+            global::CronControlLibrary.Properties.ControlResource.Thursday,
+            global::CronControlLibrary.Properties.ControlResource.Friday,
+            global::CronControlLibrary.Properties.ControlResource.Saturday});
             this.ddlYearlyWeekdays.Location = new System.Drawing.Point(136, 3);
             this.ddlYearlyWeekdays.Name = "ddlYearlyWeekdays";
             this.ddlYearlyWeekdays.Size = new System.Drawing.Size(75, 21);
@@ -1021,7 +1017,7 @@ namespace CronControlLibrary
             this.lblYearlyOf.Name = "lblYearlyOf";
             this.lblYearlyOf.Size = new System.Drawing.Size(16, 13);
             this.lblYearlyOf.TabIndex = 10;
-            this.lblYearlyOf.Text = global::CronControlLibrary.Properties.ControlResource.yearlyOf;
+            this.lblYearlyOf.Text = "of";
             // 
             // ddlYearlyMonths2
             // 
@@ -1037,7 +1033,7 @@ namespace CronControlLibrary
             global::CronControlLibrary.Properties.ControlResource.July,
             global::CronControlLibrary.Properties.ControlResource.August,
             global::CronControlLibrary.Properties.ControlResource.September,
-                global::CronControlLibrary.Properties.ControlResource.October,
+            global::CronControlLibrary.Properties.ControlResource.October,
             global::CronControlLibrary.Properties.ControlResource.November,
             global::CronControlLibrary.Properties.ControlResource.December});
             this.ddlYearlyMonths2.Location = new System.Drawing.Point(239, 3);
@@ -1078,7 +1074,7 @@ namespace CronControlLibrary
             this.lblYearlyEvery.Name = "lblYearlyEvery";
             this.lblYearlyEvery.Size = new System.Drawing.Size(34, 13);
             this.lblYearlyEvery.TabIndex = 3;
-            this.lblYearlyEvery.Text = global::CronControlLibrary.Properties.ControlResource.yearlyEvery;
+            this.lblYearlyEvery.Text = "Every";
             // 
             // ddlYearlyMonths
             // 
@@ -1143,7 +1139,7 @@ namespace CronControlLibrary
             this.lblYearlyStartAt.Name = "lblYearlyStartAt";
             this.lblYearlyStartAt.Size = new System.Drawing.Size(41, 13);
             this.lblYearlyStartAt.TabIndex = 4;
-            this.lblYearlyStartAt.Text = global::CronControlLibrary.Properties.ControlResource.yearlyStartAt;
+            this.lblYearlyStartAt.Text = "Start at";
             // 
             // dtpYearlyTime
             // 
@@ -1157,10 +1153,28 @@ namespace CronControlLibrary
             this.dtpYearlyTime.TabIndex = 5;
             this.dtpYearlyTime.Value = new System.DateTime(2017, 6, 9, 9, 7, 0, 0);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Minutes",
+            "Hourly",
+            "Daily",
+            "Weekly",
+            "Monthly",
+            "Yearly",
+            "Disabled"});
+            this.comboBox1.Location = new System.Drawing.Point(4, 4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
             // CronControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.tcMain);
             this.MinimumSize = new System.Drawing.Size(0, 130);
             this.Name = "CronControl";
@@ -1296,5 +1310,6 @@ namespace CronControlLibrary
         internal System.Windows.Forms.DateTimePicker dtpYearlyTime;
         internal System.Windows.Forms.ComboBox ddlYearlyMonths2;
         internal System.Windows.Forms.ComboBox ddlYearlyMonths;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
