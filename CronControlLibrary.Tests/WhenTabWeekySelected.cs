@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using FluentAssertions;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Ploeh.AutoFixture;
 
 namespace CronControlLibrary.Tests
 {
-    [TestFixture]
+    [TestClass]
     public class WhenTabWeekySelected
     {
         // Arrange
@@ -20,13 +20,13 @@ namespace CronControlLibrary.Tests
         private IList<bool> Checks => _checks ?? (_checks = _fixture.CreateMany<bool>(7).ToList());
         private IList<bool> OpositeChecks => Checks.Select(c => !c).ToList();
 
-        [SetUp]
+        [TestInitialize]
         public void Setup()
         {
             _fixture = new Fixture();
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldBeInputedValue()
         {
             // Arrange
@@ -60,7 +60,7 @@ namespace CronControlLibrary.Tests
             result.Should().Be($"0 {time.Minute} {time.Hour} ? * {weekdays} *");
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldBeOpsiteInputedValue()
         {
             // Arrange

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using FluentAssertions;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Ploeh.AutoFixture;
 
 namespace CronControlLibrary.Tests
 {
-    [TestFixture]
+    [TestClass]
     public class WhenSetValue
     {
         // Arrange
@@ -22,7 +22,7 @@ namespace CronControlLibrary.Tests
         private IList<bool> Checks => _checks ?? (_checks = _fixture.CreateMany<bool>(7).ToList());
         private IList<bool> OpositeChecks => Checks.Select(c => !c).ToList();
 
-        [SetUp]
+        [TestInitialize]
         public void Setup()
         {
             _fixture = new Fixture();
@@ -33,7 +33,7 @@ namespace CronControlLibrary.Tests
             _intGenerator = (begin, end) => { return intGenerator.First(x => x > begin && x <= end); };
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldSelectMinutesTabIfMinutesExpression()
         {
             // Arrange
@@ -49,7 +49,7 @@ namespace CronControlLibrary.Tests
             control.nudMinutes.Value.Should().Be(minutes);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldSelectHoursTabIfHourlyExpression()
         {
             // Arrange
@@ -68,7 +68,7 @@ namespace CronControlLibrary.Tests
             control.dtpHourlyTime.Value.Minute.Should().Be(time.Minute);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldSelectDaysTabIfDailyExpression()
         {
             // Arrange
@@ -87,7 +87,7 @@ namespace CronControlLibrary.Tests
             control.dtpDailyTime.Value.Minute.Should().Be(time.Minute);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldSelectDaysTabAndWeekdaysIfDailyWeekdaysExpression()
         {
             // Arrange
@@ -105,7 +105,7 @@ namespace CronControlLibrary.Tests
             control.dtpDailyTime.Value.Minute.Should().Be(time.Minute); ;
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldSelectWeeksTabIfWeekyExpression()
         {
             // Arrange
@@ -139,7 +139,7 @@ namespace CronControlLibrary.Tests
             control.cbxSaturday.Checked.Should().Be(Checks[6]);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldSelectWeeksTabIfWeekyExpressionOposite()
         {
             // Arrange
@@ -173,7 +173,7 @@ namespace CronControlLibrary.Tests
             control.cbxSaturday.Checked.Should().Be(OpositeChecks[6]);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldSelectMonthsTabIfMonthlyExpression()
         {
             // Arrange
@@ -194,7 +194,7 @@ namespace CronControlLibrary.Tests
             control.dtpMonthlyTime.Value.Minute.Should().Be(time.Minute);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldSelectMonthsTabIfMonthlyOrdinalExpression()
         {
             // Arrange
@@ -219,7 +219,7 @@ namespace CronControlLibrary.Tests
             control.dtpMonthlyTime.Value.Minute.Should().Be(time.Minute);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldSelectYearsTabIfYearlyExpression()
         {
             // Arrange
@@ -240,7 +240,7 @@ namespace CronControlLibrary.Tests
             control.dtpYearlyTime.Value.Minute.Should().Be(time.Minute);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldSelectYearsTabIfYearlyOrdinalExpression()
         {
             // Arrange

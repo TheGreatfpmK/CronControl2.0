@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
 using FluentAssertions;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Ploeh.AutoFixture;
 
 namespace CronControlLibrary.Tests
 {
-    [TestFixture]
+    [TestClass]
     public class WhenTabMinutesSelected
     {
         // Arrange
@@ -16,7 +16,7 @@ namespace CronControlLibrary.Tests
         private Fixture _fixture;
         private Func<decimal> _generator;
 
-        [SetUp]
+        [TestInitialize]
         public void Setup()
         {
             _fixture = new Fixture();
@@ -24,7 +24,7 @@ namespace CronControlLibrary.Tests
             _generator = () => { return generator.First(x => x > 1 && x <= 3600); };
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldBeInputedValue()
         {
             // Arrange
@@ -40,7 +40,7 @@ namespace CronControlLibrary.Tests
             result.Should().Be($"0 0/{minutes} * 1/1 * ? *");
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldThrowOnZero()
         {
             // Arrange
@@ -54,7 +54,7 @@ namespace CronControlLibrary.Tests
             result.ShouldThrowExactly<ArgumentOutOfRangeException>();
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldThrowOnGreaterThenMax()
         {
             // Arrange

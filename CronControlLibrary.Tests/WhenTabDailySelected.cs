@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
 using FluentAssertions;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Ploeh.AutoFixture;
 
 namespace CronControlLibrary.Tests
 {
-    [TestFixture]
+    [TestClass]
     public class WhenTabDailySelected
     {
         // Arrange
@@ -16,7 +16,7 @@ namespace CronControlLibrary.Tests
         private Fixture _fixture;
         private Func<decimal> _generator;
 
-        [SetUp]
+        [TestInitialize]
         public void Setup()
         {
             _fixture = new Fixture();
@@ -24,7 +24,7 @@ namespace CronControlLibrary.Tests
             _generator = () => { return generator.First(x => x > 1 && x <= 360); };
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldChangeSelectedRadioToWeekdays()
         {
             // Arrange
@@ -39,7 +39,7 @@ namespace CronControlLibrary.Tests
             control.rbtDailyEvery.Checked.Should().BeFalse();
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldChangeSelectedRadioToEvery()
         {
             // Arrange
@@ -54,7 +54,7 @@ namespace CronControlLibrary.Tests
             control.rbtDailyWeekDays.Checked.Should().BeFalse();
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldBeInputedValueWhenEverySelected()
         {
             // Arrange
@@ -73,7 +73,7 @@ namespace CronControlLibrary.Tests
             result.Should().Be($"0 {time.Minute} {time.Hour} 1/{days} * ? *");
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldBeInputedValueWhenWeekdaysSelected()
         {
             // Arrange

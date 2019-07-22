@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
 using FluentAssertions;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Ploeh.AutoFixture;
 
 namespace CronControlLibrary.Tests
 {
-    [TestFixture]
+    [TestClass]
     public class WhenTabYearlySelected
     {
         // Arrange
@@ -17,7 +17,7 @@ namespace CronControlLibrary.Tests
         private Func<int, int, int> _intGenerator;
         private Func<int, int, decimal> _decimalGenerator;
 
-        [SetUp]
+        [TestInitialize]
         public void Setup()
         {
             _fixture = new Fixture();
@@ -28,7 +28,7 @@ namespace CronControlLibrary.Tests
             _intGenerator = (begin, end) => { return intGenerator.First(x => x > begin && x <= end); };
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldChangeSelectedRadioToEvery()
         {
             // Arrange
@@ -43,7 +43,7 @@ namespace CronControlLibrary.Tests
             control.rbtYearlyOrdinal.Checked.Should().BeFalse();
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldChangeSelectedRadioToOrdinal()
         {
             // Arrange
@@ -58,7 +58,7 @@ namespace CronControlLibrary.Tests
             control.rbtYearlyEvery.Checked.Should().BeFalse();
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldBeInputedValueWhenEverySelected()
         {
             // Arrange
@@ -79,7 +79,7 @@ namespace CronControlLibrary.Tests
             result.Should().Be($"0 {time.Minute} {time.Hour} {day} {month} ? *");
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldBeInputedValueWhenOrdinalSelected()
         {
             // Arrange

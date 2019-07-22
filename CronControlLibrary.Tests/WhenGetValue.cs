@@ -1,12 +1,12 @@
 ﻿using System.Linq;
 using System.Text.RegularExpressions;
 using FluentAssertions;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Ploeh.AutoFixture;
 
 namespace CronControlLibrary.Tests
 {
-    [TestFixture]
+    [TestClass]
     public class WhenGetValue
     {
         // Arrange
@@ -15,13 +15,13 @@ namespace CronControlLibrary.Tests
 
         private Fixture _fixture;
 
-        [SetUp]
+        [TestInitialize]
         public void Setup()
         {
             _fixture = new Fixture();
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldGetMinutesFormatIfMinutesTabSelected()
         {
             // Arrange
@@ -35,7 +35,7 @@ namespace CronControlLibrary.Tests
             Regex.IsMatch(result, @"0 0/\d+ \* 1/1 \* \? \*", RegexOptions.IgnoreCase).Should().BeTrue();
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldGetHourlyFormatIfHoursTabSelected()
         {
             // Arrange
@@ -49,7 +49,7 @@ namespace CronControlLibrary.Tests
             Regex.IsMatch(result, @"0 \d+ \d+/\d+ 1/1 \* \? \*", RegexOptions.IgnoreCase).Should().BeTrue();
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldGetDailyFormatIfDaysTabSelected()
         {
             // Arrange
@@ -63,7 +63,7 @@ namespace CronControlLibrary.Tests
             Regex.IsMatch(result, @"0 \d+ \d+ 1/\d+ \* \? \*", RegexOptions.IgnoreCase).Should().BeTrue();
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldGetDailyFormatIfDaysTabAndWeekDaysSelected()
         {
             // Arrange
@@ -78,7 +78,7 @@ namespace CronControlLibrary.Tests
             Regex.IsMatch(result, @"0 \d+ \d+ \? \* 2-6 \*", RegexOptions.IgnoreCase).Should().BeTrue();
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldGetWeeklyFormatIfWeeksTabSelected()
         {
             // Arrange
@@ -101,7 +101,7 @@ namespace CronControlLibrary.Tests
             Regex.IsMatch(result, @"0 \d+ \d+ \? \* (\d,?)+ \*", RegexOptions.IgnoreCase).Should().BeTrue();
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldGetMonthlyFormatIfMonthsTabSelected()
         {
             // Arrange
@@ -115,7 +115,7 @@ namespace CronControlLibrary.Tests
             Regex.IsMatch(result, @"0 \d+ \d+ \d+ 1/\d+ \? \*", RegexOptions.IgnoreCase).Should().BeTrue();
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldGetMonthlyFormatIfMonthsTabAndOrdinalSelected()
         {
             // Arrange
@@ -130,7 +130,7 @@ namespace CronControlLibrary.Tests
             Regex.IsMatch(result, @"0 \d+ \d+ \? 1/\d+ \d(#\d|L) \*", RegexOptions.IgnoreCase).Should().BeTrue();
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldGetYearlyFormatIfYearsTabSelected()
         {
             // Arrange
@@ -144,7 +144,7 @@ namespace CronControlLibrary.Tests
             Regex.IsMatch(result, @"0 \d+ \d+ \d+ \d+ \? \*", RegexOptions.IgnoreCase).Should().BeTrue();
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldGetYearlyFormatIfYearsTabAndOrdinalSelected()
         {
             // Arrange
