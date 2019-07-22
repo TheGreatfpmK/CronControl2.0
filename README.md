@@ -1,4 +1,3 @@
 # CronControl
-A .net WinForms CronControl
 
-Totally inspired by http://www.cronmaker.com/
+Rework of this CronControl (https://github.com/rafaelbubach/CronControl) for work project
