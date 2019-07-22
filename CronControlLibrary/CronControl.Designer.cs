@@ -155,7 +155,7 @@ namespace CronControlLibrary
             this.tcMain.Location = new System.Drawing.Point(0, 31);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
-            this.tcMain.Size = new System.Drawing.Size(520, 109);
+            this.tcMain.Size = new System.Drawing.Size(520, 136);
             this.tcMain.TabIndex = 0;
             // 
             // tabMinutes
@@ -164,7 +164,7 @@ namespace CronControlLibrary
             this.tabMinutes.Location = new System.Drawing.Point(4, 22);
             this.tabMinutes.Name = "tabMinutes";
             this.tabMinutes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMinutes.Size = new System.Drawing.Size(512, 83);
+            this.tabMinutes.Size = new System.Drawing.Size(512, 110);
             this.tabMinutes.TabIndex = 0;
             this.tabMinutes.Text = global::CronControlLibrary.Properties.ControlResource.minutesTabTitle;
             this.tabMinutes.UseVisualStyleBackColor = true;
@@ -177,7 +177,7 @@ namespace CronControlLibrary
             this.flpMinutes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpMinutes.Location = new System.Drawing.Point(3, 3);
             this.flpMinutes.Name = "flpMinutes";
-            this.flpMinutes.Size = new System.Drawing.Size(506, 77);
+            this.flpMinutes.Size = new System.Drawing.Size(506, 104);
             this.flpMinutes.TabIndex = 0;
             // 
             // lblMinutesEvery
@@ -1169,6 +1169,7 @@ namespace CronControlLibrary
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 
             // CronControl
             // 
@@ -1178,7 +1179,7 @@ namespace CronControlLibrary
             this.Controls.Add(this.tcMain);
             this.MinimumSize = new System.Drawing.Size(0, 130);
             this.Name = "CronControl";
-            this.Size = new System.Drawing.Size(520, 140);
+            this.Size = new System.Drawing.Size(520, 167);
             this.tcMain.ResumeLayout(false);
             this.tabMinutes.ResumeLayout(false);
             this.flpMinutes.ResumeLayout(false);

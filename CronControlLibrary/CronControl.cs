@@ -333,5 +333,10 @@ namespace CronControlLibrary
                 return $"0 {time.Minute} {time.Hour} ? {month} {weekday}{ordinal} *";
             }
         }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tcMain.SelectedIndex = comboBox1.SelectedIndex;
+        }
     }
 }
