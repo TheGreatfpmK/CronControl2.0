@@ -501,7 +501,7 @@ namespace CronControlLibrary
             this.tabWeekly.Location = new System.Drawing.Point(4, 22);
             this.tabWeekly.Name = "tabWeekly";
             this.tabWeekly.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWeekly.Size = new System.Drawing.Size(512, 114);
+            this.tabWeekly.Size = new System.Drawing.Size(512, 110);
             this.tabWeekly.TabIndex = 3;
             this.tabWeekly.Text = global::CronControlLibrary.Properties.ControlResource.weeklyTabTitle;
             this.tabWeekly.UseVisualStyleBackColor = true;
@@ -518,7 +518,7 @@ namespace CronControlLibrary
             this.tlpWeekly.RowCount = 2;
             this.tlpWeekly.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlpWeekly.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpWeekly.Size = new System.Drawing.Size(506, 108);
+            this.tlpWeekly.Size = new System.Drawing.Size(506, 104);
             this.tlpWeekly.TabIndex = 0;
             // 
             // flpWeeklyBotton
@@ -526,9 +526,9 @@ namespace CronControlLibrary
             this.flpWeeklyBotton.Controls.Add(this.lblWeeklyStartAt);
             this.flpWeeklyBotton.Controls.Add(this.dtpWeeklyTime);
             this.flpWeeklyBotton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpWeeklyBotton.Location = new System.Drawing.Point(3, 57);
+            this.flpWeeklyBotton.Location = new System.Drawing.Point(3, 55);
             this.flpWeeklyBotton.Name = "flpWeeklyBotton";
-            this.flpWeeklyBotton.Size = new System.Drawing.Size(500, 48);
+            this.flpWeeklyBotton.Size = new System.Drawing.Size(500, 46);
             this.flpWeeklyBotton.TabIndex = 3;
             // 
             // lblWeeklyStartAt
@@ -565,7 +565,7 @@ namespace CronControlLibrary
             this.flpWeeklyTop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpWeeklyTop.Location = new System.Drawing.Point(3, 3);
             this.flpWeeklyTop.Name = "flpWeeklyTop";
-            this.flpWeeklyTop.Size = new System.Drawing.Size(500, 48);
+            this.flpWeeklyTop.Size = new System.Drawing.Size(500, 46);
             this.flpWeeklyTop.TabIndex = 0;
             // 
             // cbxMonday

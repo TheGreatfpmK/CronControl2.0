@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -17,6 +18,10 @@ namespace CronControlLibrary
             ddlYearlyMonths2.SelectedIndex = 0;
             ddlYearlyOrdinal.SelectedIndex = 0;
             ddlYearlyWeekdays.SelectedIndex = 0;
+            comboBox1.SelectedIndex = 0;
+            tcMain.Appearance = TabAppearance.FlatButtons;
+            tcMain.ItemSize = new Size(0, 1);
+            tcMain.SizeMode = TabSizeMode.Fixed;
         }
 
         public string Value
