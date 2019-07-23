@@ -19,19 +19,18 @@ namespace CronControlLibrary
             ddlYearlyOrdinal.SelectedIndex = 0;
             ddlYearlyWeekdays.SelectedIndex = 0;
             selectBox.SelectedIndex = 0;
-            tcMain.Appearance = TabAppearance.FlatButtons;
-            tcMain.ItemSize = new Size(0, 1);
-            tcMain.SizeMode = TabSizeMode.Fixed;
+            tlpHourly.Location = tlpDaily.Location = tlpWeekly.Location = tlpMonthly.Location = tlpYearly.Location = flpMinutes.Location;
+            tlpHourly.Visible = tlpDaily.Visible = tlpWeekly.Visible = tlpMonthly.Visible = false;
         }
 
         public string Value
         {
             get
             {
-                switch (tcMain.SelectedIndex)
+                switch (selectBox.SelectedIndex)
                 {
-                    case 0:
-                        return GetMinutesExpression();
+                    /*case 0:
+                        return GetMinutesExpression();*/
                     case 1:
                         return GetHourlyExpression();
                     case 2:
@@ -40,8 +39,8 @@ namespace CronControlLibrary
                         return GetWeeklyExpression();
                     case 4:
                         return GetMonthlyExpression();
-                    case 5:
-                        return GetYearlyExpression();
+                    /*case 5:
+                        return GetYearlyExpression();*/
                     default:
                         return string.Empty;
                 }
@@ -105,7 +104,7 @@ namespace CronControlLibrary
 
         private void SetHourly(string expression)
         {
-            tcMain.SelectTab(1);
+            //tcMain.SelectTab(1);
 
             var splited = expression.Split(' ');
             var minutes = splited[1];
@@ -118,7 +117,7 @@ namespace CronControlLibrary
 
         private void SetDaily(string expression)
         {
-            tcMain.SelectTab(2);
+            //tcMain.SelectTab(2);
 
             var splited = expression.Split(' ');
             var minutes = splited[1];
@@ -131,7 +130,7 @@ namespace CronControlLibrary
 
         private void SetDailyWeekdays(string expression)
         {
-            tcMain.SelectTab(2);
+            //tcMain.SelectTab(2);
 
             var splited = expression.Split(' ');
             var minutes = splited[1];
@@ -143,7 +142,7 @@ namespace CronControlLibrary
 
         private void SetWeekly(string expression)
         {
-            tcMain.SelectTab(3);
+            //tcMain.SelectTab(3);
 
             var splited = expression.Split(' ');
             var minutes = splited[1];
@@ -162,7 +161,7 @@ namespace CronControlLibrary
 
         private void SetMonthly(string expression)
         {
-            tcMain.SelectTab(4);
+            //tcMain.SelectTab(4);
 
             var splited = expression.Split(' ');
             var minutes = splited[1];
@@ -177,7 +176,7 @@ namespace CronControlLibrary
 
         private void SetMonthlyOrdinal(string expression)
         {
-            tcMain.SelectTab(4);
+            //tcMain.SelectTab(4);
 
             var splited = expression.Split(' ');
             var minutes = splited[1];
@@ -196,7 +195,7 @@ namespace CronControlLibrary
 
         private void SetYearly(string expression)
         {
-            tcMain.SelectTab(5);
+            //tcMain.SelectTab(5);
 
             var splited = expression.Split(' ');
             var minutes = splited[1];
@@ -211,7 +210,7 @@ namespace CronControlLibrary
 
         private void SetYearlyOrdinal(string expression)
         {
-            tcMain.SelectTab(5);
+            //tcMain.SelectTab(5);
 
             var splited = expression.Split(' ');
             var minutes = splited[1];
@@ -339,20 +338,35 @@ namespace CronControlLibrary
             }
         }
 
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ShowSelectedTab()
         {
-            if (selectBox.SelectedIndex == 6)
+            switch(selectBox.SelectedIndex)
             {
-                tcMain.Enabled = false;
-                return;
+                case 1:
+                    tlpHourly.Visible = true;
+                    break;
+                case 2:
+                    tlpDaily.Visible = true;
+                    break;
+                case 3:
+                    tlpWeekly.Visible = true;
+                    break;
+                case 4:
+                    tlpMonthly.Visible = true;
+                    break;
             }
-            tcMain.Enabled = true;
-            tcMain.SelectedIndex = selectBox.SelectedIndex;
         }
 
-        private void TcMain_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectBox.SelectedIndex = tcMain.SelectedIndex;
+            if (selectBox.SelectedIndex == 0)
+            {
+                flpMain.Visible = false;
+                return;
+            }
+            flpMain.Visible = true;
+            tlpHourly.Visible = tlpDaily.Visible = tlpWeekly.Visible = tlpMonthly.Visible = false;
+            ShowSelectedTab();
         }
     }
 }
