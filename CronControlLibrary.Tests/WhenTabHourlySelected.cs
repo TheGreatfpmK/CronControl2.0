@@ -31,7 +31,7 @@ namespace CronControlLibrary.Tests
             var hours = _generator();
             var time = _fixture.Create<DateTime>();
             var control = new CronControl();
-            control.tcMain.SelectTab("tabHourly");
+            control.SelectBoxIndex = 1;
             control.nudHourlyHours.Value = hours;
             control.dtpHourlyTime.Value = time;
 
@@ -47,7 +47,7 @@ namespace CronControlLibrary.Tests
         {
             // Arrange
             var control = new CronControl();
-            control.tcMain.SelectTab("tabHourly");
+            control.SelectBoxIndex = 1;
 
             // Act
             Action result = () => control.nudHourlyHours.Value = 0;
@@ -61,7 +61,7 @@ namespace CronControlLibrary.Tests
         {
             // Arrange
             var control = new CronControl();
-            control.tcMain.SelectTab("tabHourly");
+            control.SelectBoxIndex = 1;
 
             // Act
             Action result = () => control.nudHourlyHours.Value = 23 + _generator();

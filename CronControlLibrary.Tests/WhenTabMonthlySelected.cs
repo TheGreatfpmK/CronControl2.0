@@ -33,7 +33,7 @@ namespace CronControlLibrary.Tests
         {
             // Arrange
             var control = new CronControl();
-            control.tcMain.SelectTab("tabMonthly");
+            control.SelectBoxIndex = 4;
 
             // Act
             control.rbtMonthlyEvery.Checked = true;
@@ -48,7 +48,7 @@ namespace CronControlLibrary.Tests
         {
             // Arrange
             var control = new CronControl();
-            control.tcMain.SelectTab("tabMonthly");
+            control.SelectBoxIndex = 4;
 
             // Act
             control.rbtMonthlyOrdinal.Checked = true;
@@ -66,7 +66,7 @@ namespace CronControlLibrary.Tests
             var months = _decimalGenerator(1, 12);
             var time = _fixture.Create<DateTime>();
             var control = new CronControl();
-            control.tcMain.SelectTab("tabMonthly");
+            control.SelectBoxIndex = 4;
             control.rbtMonthlyEvery.Checked = true;
             control.dtpMonthlyTime.Value = time;
             control.nudMonthlyDays.Value = days;
@@ -88,7 +88,7 @@ namespace CronControlLibrary.Tests
             var months = _decimalGenerator(1, 12);
             var time = _fixture.Create<DateTime>();
             var control = new CronControl();
-            control.tcMain.SelectTab("tabMonthly");
+            control.SelectBoxIndex = 4;
             control.rbtMonthlyOrdinal.Checked = true;
             control.dtpMonthlyTime.Value = time;
             control.nudMonthlyMonths2.Value = months;
@@ -109,7 +109,7 @@ namespace CronControlLibrary.Tests
         {
             // Arrange
             var control = new CronControl();
-            control.tcMain.SelectTab("tabMonthly");
+            control.SelectBoxIndex = 4;
 
             // Act
             Action result1 = () => control.nudMonthlyMonths.Value = 0;
@@ -127,7 +127,7 @@ namespace CronControlLibrary.Tests
         {
             // Arrange
             var control = new CronControl();
-            control.tcMain.SelectTab("tabMonthly");
+            control.SelectBoxIndex = 4;
 
             // Act
             Action result1 = () => control.nudMonthlyMonths.Value = _decimalGenerator(13, 100);

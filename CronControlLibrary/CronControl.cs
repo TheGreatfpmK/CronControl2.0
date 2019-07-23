@@ -96,6 +96,18 @@ namespace CronControlLibrary
             }
         }
 
+        public int SelectBoxIndex
+        {
+            get
+            {
+                return selectBox.SelectedIndex;
+            }
+            set
+            {
+                selectBox.SelectedIndex = value;
+            }
+        }
+
         private void SetMinutes(string expression)
         {
             var minutes = expression.Split(' ')[1].Replace("0/", string.Empty);
@@ -104,7 +116,7 @@ namespace CronControlLibrary
 
         private void SetHourly(string expression)
         {
-            //tcMain.SelectTab(1);
+            selectBox.SelectedIndex = 1;
 
             var splited = expression.Split(' ');
             var minutes = splited[1];
@@ -117,7 +129,7 @@ namespace CronControlLibrary
 
         private void SetDaily(string expression)
         {
-            //tcMain.SelectTab(2);
+            selectBox.SelectedIndex = 2;
 
             var splited = expression.Split(' ');
             var minutes = splited[1];
@@ -130,7 +142,7 @@ namespace CronControlLibrary
 
         private void SetDailyWeekdays(string expression)
         {
-            //tcMain.SelectTab(2);
+            selectBox.SelectedIndex = 2;
 
             var splited = expression.Split(' ');
             var minutes = splited[1];
@@ -142,7 +154,7 @@ namespace CronControlLibrary
 
         private void SetWeekly(string expression)
         {
-            //tcMain.SelectTab(3);
+            selectBox.SelectedIndex = 3;
 
             var splited = expression.Split(' ');
             var minutes = splited[1];
@@ -161,7 +173,7 @@ namespace CronControlLibrary
 
         private void SetMonthly(string expression)
         {
-            //tcMain.SelectTab(4);
+            selectBox.SelectedIndex = 4;
 
             var splited = expression.Split(' ');
             var minutes = splited[1];
@@ -176,7 +188,7 @@ namespace CronControlLibrary
 
         private void SetMonthlyOrdinal(string expression)
         {
-            //tcMain.SelectTab(4);
+            selectBox.SelectedIndex = 4;
 
             var splited = expression.Split(' ');
             var minutes = splited[1];
@@ -195,7 +207,7 @@ namespace CronControlLibrary
 
         private void SetYearly(string expression)
         {
-            //tcMain.SelectTab(5);
+            selectBox.SelectedIndex = 5;
 
             var splited = expression.Split(' ');
             var minutes = splited[1];
@@ -210,7 +222,7 @@ namespace CronControlLibrary
 
         private void SetYearlyOrdinal(string expression)
         {
-            //tcMain.SelectTab(5);
+            selectBox.SelectedIndex = 5;
 
             var splited = expression.Split(' ');
             var minutes = splited[1];

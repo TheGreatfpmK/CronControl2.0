@@ -43,7 +43,7 @@ namespace CronControlLibrary.Tests
             weekdays.Remove(0, 1);
 
             var control = new CronControl();
-            control.tcMain.SelectTab("tabWeekly");
+            control.SelectBoxIndex = 3;
             control.dtpWeeklyTime.Value = time;
             control.cbxSunday.Checked = Checks[0];
             control.cbxMonday.Checked = Checks[1];
@@ -77,7 +77,7 @@ namespace CronControlLibrary.Tests
             weekdays.Remove(0, 1);
 
             var control = new CronControl();
-            control.tcMain.SelectTab("tabWeekly");
+            control.SelectBoxIndex = 3;
             control.dtpWeeklyTime.Value = time;
             control.cbxSunday.Checked = OpositeChecks[0];
             control.cbxMonday.Checked = OpositeChecks[1];

@@ -1090,11 +1090,11 @@ namespace CronControlLibrary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flpMain);
             this.Controls.Add(this.selectBox);
+            this.Controls.Add(this.flpMain);
             this.MinimumSize = new System.Drawing.Size(0, 130);
             this.Name = "CronControl";
-            this.Size = new System.Drawing.Size(412, 230);
+            this.Size = new System.Drawing.Size(398, 201);
             this.flpMinutes.ResumeLayout(false);
             this.flpMinutes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinutes)).EndInit();

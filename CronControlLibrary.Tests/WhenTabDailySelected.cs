@@ -29,7 +29,7 @@ namespace CronControlLibrary.Tests
         {
             // Arrange
             var control = new CronControl();
-            control.tcMain.SelectTab("tabDaily");
+            control.SelectBoxIndex = 2;
 
             // Act
             control.rbtDailyWeekDays.Checked = true;
@@ -44,7 +44,7 @@ namespace CronControlLibrary.Tests
         {
             // Arrange
             var control = new CronControl();
-            control.tcMain.SelectTab("tabDaily");
+            control.SelectBoxIndex = 2;
 
             // Act
             control.rbtDailyEvery.Checked = true;
@@ -61,7 +61,7 @@ namespace CronControlLibrary.Tests
             var days = _generator();
             var time = _fixture.Create<DateTime>();
             var control = new CronControl();
-            control.tcMain.SelectTab("tabDaily");
+            control.SelectBoxIndex = 2;
             control.rbtDailyEvery.Checked = true;
             control.nudDailyDays.Value = days;
             control.dtpDailyTime.Value = time;
@@ -79,7 +79,7 @@ namespace CronControlLibrary.Tests
             // Arrange
             var time = _fixture.Create<DateTime>();
             var control = new CronControl();
-            control.tcMain.SelectTab("tabDaily");
+            control.SelectBoxIndex = 2;
             control.rbtDailyWeekDays.Checked = true;
             control.dtpDailyTime.Value = time;
 
