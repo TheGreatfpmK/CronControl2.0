@@ -1062,7 +1062,7 @@ namespace CronControlLibrary
             this.selectBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectBox.FormattingEnabled = true;
             this.selectBox.Items.AddRange(new object[] {
-            "Disabled",
+            "Never",
             "Hourly",
             "Daily",
             "Weekly",

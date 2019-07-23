@@ -21,6 +21,7 @@ namespace CronControlLibrary
             selectBox.SelectedIndex = 0;
             tlpHourly.Location = tlpDaily.Location = tlpWeekly.Location = tlpMonthly.Location = tlpYearly.Location = flpMinutes.Location;
             tlpHourly.Visible = tlpDaily.Visible = tlpWeekly.Visible = tlpMonthly.Visible = false;
+            tlpHourly.Enabled = tlpDaily.Enabled = tlpWeekly.Enabled = tlpMonthly.Enabled = false;
         }
 
         public string Value
@@ -29,8 +30,8 @@ namespace CronControlLibrary
             {
                 switch (selectBox.SelectedIndex)
                 {
-                    /*case 0:
-                        return GetMinutesExpression();*/
+                    case 0:
+                        return string.Empty;
                     case 1:
                         return GetHourlyExpression();
                     case 2:
@@ -39,8 +40,6 @@ namespace CronControlLibrary
                         return GetWeeklyExpression();
                     case 4:
                         return GetMonthlyExpression();
-                    /*case 5:
-                        return GetYearlyExpression();*/
                     default:
                         return string.Empty;
                 }
@@ -356,15 +355,19 @@ namespace CronControlLibrary
             {
                 case 1:
                     tlpHourly.Visible = true;
+                    tlpHourly.Enabled = true;
                     break;
                 case 2:
                     tlpDaily.Visible = true;
+                    tlpDaily.Enabled = true;
                     break;
                 case 3:
                     tlpWeekly.Visible = true;
+                    tlpWeekly.Enabled = true;
                     break;
                 case 4:
                     tlpMonthly.Visible = true;
+                    tlpMonthly.Enabled = true;
                     break;
             }
         }
@@ -374,10 +377,12 @@ namespace CronControlLibrary
             if (selectBox.SelectedIndex == 0)
             {
                 flpMain.Visible = false;
+                tlpHourly.Enabled = tlpDaily.Enabled = tlpWeekly.Enabled = tlpMonthly.Enabled = false;
                 return;
             }
             flpMain.Visible = true;
             tlpHourly.Visible = tlpDaily.Visible = tlpWeekly.Visible = tlpMonthly.Visible = false;
+            tlpHourly.Enabled = tlpDaily.Enabled = tlpWeekly.Enabled = tlpMonthly.Enabled = false;
             ShowSelectedTab();
         }
     }
